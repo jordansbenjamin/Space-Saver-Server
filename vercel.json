@@ -30,5 +30,11 @@
         }
       ]
     }
+  ],
+  "auth": [
+    {
+      "source": "/(.*)",
+      "authentication": false
+    }
   ]
 }
