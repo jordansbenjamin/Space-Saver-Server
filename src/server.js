@@ -8,6 +8,8 @@ const app = express();
 // If no process.env.X is found, assign a default value instead.
 const PORT = process.env.PORT || 3000;
 
+console.log(`Running in ${process.env.NODE_ENV} mode`);
+
 // Configure some basic Helmet settings on the server instance.
 const helmet = require('helmet');
 app.use(helmet());
