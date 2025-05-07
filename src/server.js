@@ -16,7 +16,7 @@ app.use(helmet.referrerPolicy());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'"],
+      defaultSrc: ["'self'", "https://space-saver.netlify.app"],
     },
   })
 );
