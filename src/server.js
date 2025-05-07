@@ -22,12 +22,18 @@ app.use(
 );
 
 // configure CORS settings
-const cors = require('cors');
-var corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+// const cors = require('cors');
+// var corsOptions = {
+//   origin: '*',
+//   optionsSuccessStatus: 200,
+// };
+// app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+});
 
 // API-friendly request data formatting.
 app.use(express.json());
